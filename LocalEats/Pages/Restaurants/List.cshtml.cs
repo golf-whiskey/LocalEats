@@ -12,23 +12,26 @@ namespace LocalEats.Pages.Restaurants
 {
     public class ListModel : PageModel
     {
-        private readonly IConfiguration config;
-        private readonly IRestaurantData restaurantData;
+        private readonly IConfiguration _config;
+        private readonly IRestaurantData _restaurantData;
 
         public ListModel(IConfiguration config, 
                          IRestaurantData restaurantData)
         {
-            this.config = config;
-            this.restaurantData = restaurantData;
+            _config = config;
+            _restaurantData = restaurantData;
         }
 
         public string Message { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public void OnGet()
         {
-            Message = config["Message"];
-            Restaurants = restaurantData.GetAll();
+            Message = _config["Message"];
+            Restaurants = _restaurantData.GetRestaurantByName(SearchTerm);
         }
     }
 }
