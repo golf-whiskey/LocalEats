@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalEats", "LocalEats.csproj", "{C1093477-BC9B-4D7A-B45D-1E8326ACA96C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalEats", "LocalEats.csproj", "{C1093477-BC9B-4D7A-B45D-1E8326ACA96C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalEats.Core", "..\LocalEats.Core\LocalEats.Core.csproj", "{1C0271F1-4791-493A-BE92-5DB51E576872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalEats.Core", "..\LocalEats.Core\LocalEats.Core.csproj", "{1C0271F1-4791-493A-BE92-5DB51E576872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalEats.Data", "..\LocalEats.Data\LocalEats.Data.csproj", "{F3EC12D9-0814-4942-A86A-36A6A7246891}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalEats.Data", "..\LocalEats.Data\LocalEats.Data.csproj", "{F3EC12D9-0814-4942-A86A-36A6A7246891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
