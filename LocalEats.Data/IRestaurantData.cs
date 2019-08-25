@@ -1,7 +1,5 @@
 ﻿using LocalEats.Core;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace LocalEats.Data
@@ -9,8 +7,13 @@ namespace LocalEats.Data
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetRestaurantByName(string name);
+
         Restaurant GetById(int id);
+
         Restaurant Update(Restaurant updatedRestaurant);
+
+        Restaurant Add(Restaurant newRestaurant);
+
         int Commit();
     }
 
@@ -28,16 +31,6 @@ namespace LocalEats.Data
             };
         }
 
-        public int Commit()
-        {
-            return 0;
-        }
-
-        public Restaurant GetById(int id)
-        {
-            return _restaurants.SingleOrDefault(r => r.Id == id);
-        }
-
         public IEnumerable<Restaurant> GetRestaurantByName(string name = null)
         {
             return from r in _restaurants
@@ -46,9 +39,14 @@ namespace LocalEats.Data
                    select r;
         }
 
+        public Restaurant GetById(int id)
+        {
+            return _restaurants.SingleOrDefault(r => r.Id == id);
+        }
+
         public Restaurant Update(Restaurant updatedRestaurant)
         {
-            var restaurant = _restaurants.SingleOrDefault(r => 
+            var restaurant = _restaurants.FirstOrDefault(r =>
                 r.Id == updatedRestaurant.Id);
 
             if (restaurant != null)
@@ -59,6 +57,18 @@ namespace LocalEats.Data
             }
 
             return restaurant;
+        }
+
+        public Restaurant Add(Restaurant newRestaurant)
+        {
+            newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            _restaurants.Add(newRestaurant);
+            return newRestaurant;
+        }
+
+        public int Commit()
+        {
+            return 0;
         }
     }
 }

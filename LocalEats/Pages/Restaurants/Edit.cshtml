@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{restaurantId:int?}"
 @model LocalEats.Pages.Restaurants.EditModel
 @{
     ViewData["Title"] = "Edit";
@@ -7,18 +7,21 @@
 <h2>Editing @Model.Restaurant.Name</h2>
 
 <form method="post">
-    <input type="hidden" asp-for="@Model.Restaurant.Id" />
+    <input type="hidden" asp-for="Restaurant.Id" />
     <div class="form-group">
         <label asp-for="Restaurant.Name"></label>
         <input asp-for="Restaurant.Name" class="form-control" />
+        <span asp-validation-for="Restaurant.Name" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Restaurant.Location"></label>
         <input asp-for="Restaurant.Location" class="form-control" />
+        <span asp-validation-for="Restaurant.Location" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Restaurant.Cuisine"></label>
         <select asp-for="Restaurant.Cuisine" asp-items="Model.Cuisines" class="form-control"></select>
+        <span asp-validation-for="Restaurant.Cuisine" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-info mb-2">Save</button>
 </form>
