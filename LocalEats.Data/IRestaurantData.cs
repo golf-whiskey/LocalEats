@@ -16,6 +16,8 @@ namespace LocalEats.Data
         Restaurant Delete(int id);
 
         int Commit();
+
+        int GetCountOfRestaurants();
     }
 }
 

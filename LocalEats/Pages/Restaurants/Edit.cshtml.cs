@@ -34,9 +34,7 @@ namespace LocalEats.Pages.Restaurants
             }
             else
             {
-                Restaurant = new Restaurant()
-                {
-                };
+                Restaurant = new Restaurant() { };
             }
 
             if (Restaurant == null)

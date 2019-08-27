@@ -69,5 +69,10 @@ namespace LocalEats.Data
 
             return restaurant;
         }
+
+        public int GetCountOfRestaurants()
+        {
+            return _restaurants.Count();
+        }
     }
 }
